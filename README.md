@@ -33,7 +33,7 @@ CREATE DATABASE hair_salon;
 CREATE TABLE "clients" (
 "id"  SERIAL ,
 "name" VARCHAR ,
-"id_stylists" INTEGER ,
+"stylist_id" INTEGER ,
 PRIMARY KEY ("id")
 );
 
@@ -43,6 +43,6 @@ CREATE TABLE "stylists" (
 PRIMARY KEY ("id")
 );
 
-ALTER TABLE "clients" ADD FOREIGN KEY ("id_stylists") REFERENCES "stylists" ("id");
+ALTER TABLE "clients" ADD FOREIGN KEY ("stylist_id") REFERENCES "stylists" ("id");
 
 CREATE DATABASE hair_salon_test WITH TEMPLATE hair_salon;
