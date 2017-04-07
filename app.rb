@@ -18,7 +18,18 @@ get('/stylists') do
     erb(:stylists)
 end
 
+get('/add_stylist') do
+    erb(:stylists_form)
+end
+
 get('/clients') do
     @clients = Client.all()
     erb(:clients)
+end
+
+post('/stylists') do
+    stylist = params.fetch('name')
+    Stylist.new({:name => stylist}).save
+    @stylists = Stylist.all
+    erb(:stylists)
 end

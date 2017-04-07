@@ -13,13 +13,13 @@
     <ol style="text-aline: center">
         <% @stylists.each do |stylist| %>
             <div class="row text-center">
-                <li>
+                <li style="font-size: 20px">
                     <%= stylist.name %>
                 </li>
 
-                  <% if @stylist.client.any? %>
+                  <% if stylist.clients.any? %>
                     <ul>
-                    <% @stylist.client do |client| %>
+                    <% stylist.clients do |client| %>
                       <li><%client.name%></li>
                     <%end%>
                     </ul>
