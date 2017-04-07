@@ -33,3 +33,10 @@ post('/stylists') do
     @stylists = Stylist.all
     erb(:stylists)
 end
+
+get('/del_stylist/:id') do
+    stylist = Stylist.find((params.fetch("id")).to_i)
+    result = stylist.delete
+    @stylists = Stylist.all
+    erb(:stylists)
+end
